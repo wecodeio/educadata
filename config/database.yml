@@ -1,0 +1,7 @@
+development:
+  url: postgres://hackaton_programar:2013hackaton@localhost/hackaton_programar_development
+  max_connections: 4
+
+# test:
+#   url: postgres://picmeapi:pass123@localhost/picmeapi_test
+#   max_connections: 4
