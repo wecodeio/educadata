@@ -3,10 +3,9 @@
 <head>
   <meta charset='utf-8'>
   <title>EducaData</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/educadata.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/educadata.css" rel="stylesheet">
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
 
 </head>
@@ -21,6 +20,7 @@
             <div class="container">
               <ul class="nav">
                 <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="/inversion_en_educacion">Inversión</a></li>
                 <li><a href="#">Por año</a></li>
                 <li><a href="#">Por zona</a></li>
               </ul>
@@ -29,12 +29,7 @@
         </div><!-- /.navbar -->
       </div>
 
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>EducaData</h1>
-        <p class="lead">Set de visualizaciones de indicadores educativos en el período 2003 a 2009.</p>
-        <a class="btn btn-large btn-success" href="#">Más información</a>
-      </div>
+      <%= yield %>
 
       <hr>
 
