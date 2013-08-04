@@ -26,7 +26,9 @@
                 <li <%= 'class="active"' if request.path =="/gasto_x_alumno" %>><a href="/gasto_x_alumno">
                   Gasto por alumno
                 </a></li>
-                <li><a href="#">¿Mapa?</a></li>
+                <li <%= 'class="active"' if request.path =="/evolucion_indicadores" %>><a href="/evolucion_indicadores">
+                  Evolución indicadores
+                </a></li>
               </ul>
             </div>
           </div>

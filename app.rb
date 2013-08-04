@@ -23,3 +23,18 @@ get '/gasto_x_alumno' do
 	array += GASTO_X_ALUMNO_MES_2011.to_a.each{|x| x[1]=x[1].round(2)}
 	erb :gasto_x_alumno, :locals => { :array => array.to_s }
 end
+
+get '/evolucion_indicadores' do
+	array = [['Año', '% Abandono', '% Repitencia' ]]
+	array += INDICADORES_PROMEDIO_X_AÑO.to_a.each{|x| 
+		x[1]=x[1].round(2)
+		x[2]=x[2].round(2)
+	}
+	array2 = [['Año', 'Promedio', 'Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'CABA', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']]
+	array2 += ABANDONO_POLI_3.to_a.each{ |x|
+		(1..25).each{|j|
+			x[j]=x[j].round(2)
+		}
+	} 
+	erb :evolucion_indicadores, :locals => { :array => array.to_s, :array2 => array2.to_s }
+end

@@ -1,0 +1,52 @@
+<h1>Evolución de indicadores</h1>
+
+<p>¿Cómo se refleja el aumento de la inversión en Educación en los indicadores de abandono y repitencia?</p>
+
+<p><em>Valores de 2003 a 2009 - Promedios no ponderados</em></p>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(<%= array %>);
+
+    var options = {
+      title: '',
+      vAxis: {title: ''},
+      isStacked: true,
+      colors: ['red', 'yellow']
+    };
+
+    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+<p>&nbsp;</p>
+<p>Para alumnos que llegan a último año de Polimodal, ¿Cuál es la tasa de abandono durante ese año?</p>
+
+<div id="chart_div2" style="width: 900px; height: 700px;"></div>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(<%= array2 %>);
+
+    var options = {
+      title: '',
+      vAxis: {title: ''}
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+    chart.draw(data, options);
+  }
+</script>
+
+
+
+<p>Fuente: Datos publicados por el Ministerio de Educación para el #HackatonProgramAR</p>
