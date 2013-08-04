@@ -23,8 +23,10 @@
                 <li <%= 'class="active"' if request.path =="/inversion_en_educacion" %>><a href="/inversion_en_educacion">
                     Inversión
                 </a></li>
-                <li><a href="#">Por año</a></li>
-                <li><a href="#">Por zona</a></li>
+                <li <%= 'class="active"' if request.path =="/gasto_x_alumno" %>><a href="/gasto_x_alumno">
+                  Gasto por alumno
+                </a></li>
+                <li><a href="#">¿Mapa?</a></li>
               </ul>
             </div>
           </div>

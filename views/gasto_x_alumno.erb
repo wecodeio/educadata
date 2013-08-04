@@ -1,0 +1,23 @@
+<h1>Gasto mensual por alumno</h1>
+
+<p><em>Valores de 2011</em></p>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+        var data = google.visualization.arrayToDataTable(<%= array %>);
+
+        var options = {
+          title: '',
+          hAxis: {title: '', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+  }
+</script>

@@ -18,3 +18,8 @@ get '/inversion_en_educacion' do
 	erb :inversion, :locals => { :json => json }
 end
 
+get '/gasto_x_alumno' do 
+	array = [['Provincia', '$']]
+	array += GASTO_X_ALUMNO_MES_2011.to_a.each{|x| x[1]=x[1].round(2)}
+	erb :gasto_x_alumno, :locals => { :array => array.to_s }
+end
