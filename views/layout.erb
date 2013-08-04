@@ -19,8 +19,10 @@
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="/inversion_en_educacion">Inversión</a></li>
+                <li <%= 'class="active"' if request.path =="/" %>><a href="/">Inicio</a></li>
+                <li <%= 'class="active"' if request.path =="/inversion_en_educacion" %>><a href="/inversion_en_educacion">
+                    Inversión
+                </a></li>
                 <li><a href="#">Por año</a></li>
                 <li><a href="#">Por zona</a></li>
               </ul>

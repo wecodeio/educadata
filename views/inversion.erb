@@ -1,4 +1,21 @@
 <h1>Inversión en Educación</h1>
 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-asdas
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+        var data = google.visualization.arrayToDataTable(<%= json %>);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+  }
+</script>
