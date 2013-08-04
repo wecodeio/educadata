@@ -1,21 +1,20 @@
+#encoding: utf-8
 require 'sinatra'
 require_relative 'config/initializers/sequel'
-require_relative 'config/initializers/sequel'
+
+require_relative 'stats/stats.rb'
+include Stats
 
 get '/' do 
 	erb :index
 end
 
 get '/inversion_en_educacion' do 
-	json = "[
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]"
-    #json = "['Año', '% PBI'] ,"
-	#json += "['2009', '5.3'], ['2010', '5.3'], ['2011', '5.3']"
+    json = "[ ['Año','% PBI'], "
+    PORCENTAJE_DEL_PBI_DESTINADO_A_EDUCACION_POR_ANIO.each{ |key, value| 
+    	json << "['" + key.to_s + "'," + value.to_s + "],"
+    }
+    json = json[0..-2] + "]"
 	erb :inversion, :locals => { :json => json }
 end
 
