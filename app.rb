@@ -28,6 +28,10 @@ get '/salud' do
   erb :salud
 end
 
+get '/tags' do
+  erb :tags
+end
+
 get '/evolucion_indicadores' do
 	array = [['Año', '% Abandono', '% Repitencia' ]]
 	array += INDICADORES_PROMEDIO_X_AÑO.to_a.each{|x| 
