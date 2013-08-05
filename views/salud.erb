@@ -39,7 +39,13 @@ text {
   pointer-events: all;
   cursor: ew-resize;
 }
-h1 { font-size: 3em }
+h1 { font-size: 3em; }
+
+div.description {
+  line-height: 1.5em;
+  width: 750px;
+  font-size: 1.5em;
+}
 </style>
 
 <h1>Salud educativa de las Provincias</h1>
@@ -48,7 +54,17 @@ h1 { font-size: 3em }
 
 <aside>Posicione el mouse sobre el año para desplazar el tiempo</aside>
 
-<p class="attribution">Basado en: <a href="https://github.com/RandomEtc/mind-gapper-js">Tom Carden</a>, <a href="http://gapminder.org">Gapminder</a>, <a href="http://bost.ocks.org/mike/nations/">Mike Bostock</a>.
+<p class="attribution">Basado en: <a href="https://github.com/RandomEtc/mind-gapper-js">Tom Carden</a>, <a href="http://gapminder.org">Gapminder</a>, <a href="http://bost.ocks.org/mike/nations/">Mike Bostock</a>. Utilizando datos del <a href="http://datospublicos.gob.ar/">portal de datos públicos</a></p>
+
+<div class="description">
+  <p>Este gráfico está basado en cruzar 2 indicadores positivos por provincia
+  (en este caso "Promedio de promoción anual en la educación primaria" y "Promedio de promoción anual en la educación secundaria"</p>
+
+  <p>En forma interactiva el gráfico se mueve al avanzar los años mostrando la
+  situación de cada provincia. El <strong>radio</strong> de las burbujas indica el presupuesto de la provincia, que da cuenta de la inversión que tuvo esa provincia. El dato actualmente está evaluado medianto los montos por provincia. En un futuro podría utilizarse el presupuesto asignado por alumno y así atenuar las fluctuaciones generadas por la inflación.</p>
+
+  <p>Las provincias que estén en el <strong>cuadrante superior derecho</strong> muestran una mejor situación educativa y las que queden en el cuadrante inferior izquierdo serían las que necesitarían atención (podría usarse también como indicadores positivos cantidad de cargos docentes por alumno u otros).</p>
+</div>
 
 <script src="/js/d3.v3.min.js"></script>
 <script>
